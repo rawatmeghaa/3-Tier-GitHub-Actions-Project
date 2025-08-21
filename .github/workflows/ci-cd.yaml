@@ -43,6 +43,7 @@ jobs:
   
   tivy_scan:
     runs-on: ubuntu-latest
+    needs: gitleaks_scan
     steps:
       - name: checkout_code
         uses: actions/checkout@v4
