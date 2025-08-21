@@ -53,6 +53,6 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
           format: 'table'
-          ignore-fixed: true
-          vuln-type: 'os , library'
-          severity: 'HIGH , CRITICAL'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'HIGH,CRITICAL'
