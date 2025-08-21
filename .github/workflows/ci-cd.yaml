@@ -42,7 +42,7 @@ jobs:
             gitleaks detect --source ./api --exit-code 1
   
   tivy_scan:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout_code
         uses: actions/checkout@v4
