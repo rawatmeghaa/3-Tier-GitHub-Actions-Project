@@ -1,0 +1,46 @@
+name: Nodejs CICD
+
+on:
+  push:
+    branches: ["main"]
+    pull_request:
+      branches: ["main"]
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout_code
+        uses: actions/checkout@v4
+
+      - name: Set up node js
+        uses: actions/setup-node@v4
+
+        with:
+          node-version '23'
+      - name: Frontend Compilations
+        run: |
+          cd client
+          find . -name "*.js" -exec node --check {} +
+
+      - name: Backend Compilations
+        run: | 
+          cd api
+          find . -name "*.js" -exec node --check {} +
+
+  gitleaks_scan:
+    runs-on: ubuntu-latest
+      steps:
+        - name: checkout_code
+          uses: actions/checkout@v4
+        - name: Gitleak Setup
+          uses: gitleaks/gitleaks-action@v2
+        - name: Gitleaks scan
+          run: |
+            gitleaks detect --source  ./client --exit-code 1
+            gitleaks detect --source ./api --exit-code 1
+  
+  # tivy_scan:
+  #   runs_on: ubuntu-latest
+  #   steps:
+  #     -
