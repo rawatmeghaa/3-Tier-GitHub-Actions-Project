@@ -68,9 +68,9 @@ jobs:
         with:
           projectBaseDir: client
           args: >
-            -Dsonar.organization=megha-rawat
-            -Dsonar.projectKey=3-Tier-Github-Actions-Project
-            -Dsonar.projectName=3-Tier-Github-Actions-Project
+            -Dsonar.organization=rawatmeghaa
+            -Dsonar.projectKey=rawatmeghaa_3-Tier-GitHub-Actions-Project
+            -Dsonar.projectName=3-Tier-GitHub-Actions-Project
             -Dsonar.sources=.
             -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/**
         env:
@@ -88,9 +88,9 @@ jobs:
         with:
           projectBaseDir: api
           args: >
-            -Dsonar.organization=megha-rawat
-            -Dsonar.projectKey=3-Tier-Github-Actions-Project
-            -Dsonar.projectName=3-Tier-Github-Actions-Project
+            -Dsonar.organization=rawatmeghaa
+            -Dsonar.projectKey=rawatmeghaa_3-Tier-GitHub-Actions-Project
+            -Dsonar.projectName=3-Tier-GitHub-Actions-Project
             -Dsonar.sources=.
             -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/**
         env:
