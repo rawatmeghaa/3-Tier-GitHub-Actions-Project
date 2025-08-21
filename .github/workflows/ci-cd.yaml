@@ -59,7 +59,7 @@ jobs:
 
   sonar_frontend:
     runs-on: ubuntu-latest
-    needs: trivy_scan
+    needs: tivy_scan
     steps:
       - name: checkout_code
         uses: actions/checkout@v4
