@@ -71,7 +71,7 @@ jobs:
             -Dsonar.projectKey=myproject_api
             -Dsonar.projectName=myproject_api
             -Dsonar.sources=.
-            -Dsonar.exclusions=**/node_modules**,**/dist**, **/build**
+            -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/**
         env:
           SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
           SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
