@@ -57,7 +57,7 @@ jobs:
           vuln-type: 'os,library'
           severity: 'HIGH,CRITICAL'
 
-  sonar_frontend_analyis:
+  sonar_frontend_analysis:
     runs-on: ubuntu-latest
     needs: tivy_scan
     steps:
@@ -79,7 +79,7 @@ jobs:
 
   sonar_backend_analyis:
     runs-on: ubuntu-latest
-    needs: sonar_frontend
+    needs: sonar_frontend_analysis
     steps:
       - name: checkout_code
         uses: actions/checkout@v4
