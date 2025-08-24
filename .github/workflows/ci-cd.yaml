@@ -35,8 +35,8 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
       - name: Gitleaks scan
         run: |
-          gitleaks detect --source ./client --exec-code 1
-          gitleaks detect --source ./api --exec-code 1
+          gitleaks detect --source ./client --exit-code 1
+          gitleaks detect --source ./api --exit-code 1
 
   trivy_fs_scan:
     runs-on: ubuntu-latest
@@ -47,12 +47,12 @@ jobs:
       - name: trivy setup 
         uses: aquasecurity/trivy-action@0.28.0 
         with: 
-          scan-type: 'fs'
+          scan-type: "fs"
           scan-ref: "."
           format: "table"
           ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'HIGH,CRITICAL'
+          vuln-type: "os,library"
+          severity: "HIGH,CRITICAL"
 
   sonar_frontend:
     runs-on: sonar
