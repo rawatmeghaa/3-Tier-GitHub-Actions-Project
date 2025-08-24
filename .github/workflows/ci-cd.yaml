@@ -94,7 +94,7 @@ jobs:
 
   build_frontend_dcoker_image_and_push:
     runs-on: ubuntu-latest
-    needs: sonar_backend
+    needs: trivy_fs_scan
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
