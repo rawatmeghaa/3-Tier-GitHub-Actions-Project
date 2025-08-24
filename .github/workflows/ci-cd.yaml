@@ -74,23 +74,23 @@ jobs:
   #         SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
 
   # sonar_backend:
-    runs-on: sonar
-    needs: sonar_frontend
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-      - name: Sonarqube setup 
-        uses: sonarsource/sonarqube-scan-action@master
-        with: 
-          projectBaseDir: api
-          args: >
-            -Dsonar.projectKey=myproject
-            -Dsonar.projectName=myproject
-            -Dsonar.sources=.
-            -Dsonar.exclusions=**/nodemodules/**,**/dist/**,**/build/**
-        env:
-          SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
-          SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
+    # runs-on: sonar
+    # needs: sonar_frontend
+    # steps:
+    #   - name: checkout code
+    #     uses: actions/checkout@v4
+    #   - name: Sonarqube setup 
+    #     uses: sonarsource/sonarqube-scan-action@master
+    #     with: 
+    #       projectBaseDir: api
+    #       args: >
+    #         -Dsonar.projectKey=myproject
+    #         -Dsonar.projectName=myproject
+    #         -Dsonar.sources=.
+    #         -Dsonar.exclusions=**/nodemodules/**,**/dist/**,**/build/**
+    #     env:
+    #       SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+    #       SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
 
   build_frontend_dcoker_image_and_push:
     runs-on: ubuntu-latest
